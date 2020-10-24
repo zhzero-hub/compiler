@@ -7,7 +7,7 @@ then
     git commit -m "`date +"%Y.%m.%d %H:%M:%S"`"
 
 else
-    git commit -m "$1"
+    git commit -m "$*"
 fi
 
 git push origin main
