@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#@author: zhzero
+
 git init
 git add -A
 if [ $1x = x ]    #无commit信息，自动commit时间
