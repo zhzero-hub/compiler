@@ -2,7 +2,7 @@
 
 #@author: zhzero
 
-if [ "$1"x=x  ]   	                        #没有输入文件名
+if [ "$1x" = "x"  ]   	                        #没有输入文件名
 then
     read -t 30 -p "Please input filename: " filenamein
 
@@ -10,7 +10,7 @@ else
     filenamein=$1
 fi
 
-if [  "${filenamein}x"="x"  ]
+if [  "${filenamein}x" = "x"  ]
 then
     echo "No input file name!"
     exit
@@ -73,7 +73,6 @@ flexCompile()
     flex -o $3 $2
     clang $3 -o $1
     ./$1
-    return true
 }
 
 flexCompile $filename $flexfilename $flexoutfilename
