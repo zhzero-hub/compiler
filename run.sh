@@ -18,7 +18,7 @@ fi
 
 index=`expr index "$1" .`
 
-if [ $index == 0 ]                          #输入不带文件后缀名
+if [ $index == 0 ]                              #输入不带文件后缀名
 then
     filename=$filenamein
     flexfilename="${filenamein}.l"
