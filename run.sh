@@ -2,7 +2,7 @@
 
 #@author: zhzero
 
-if [ "$1x"="x"  ]   #没有输入文件名
+if [ "$1"x=x  ]   	                    #没有输入文件名
 then
     read -t 30 -p "Please input filename: " filenamein
 
@@ -18,18 +18,20 @@ fi
 
 index=`expr index "$1" .`
 
-if [ $index == 0 ]  #输入不带文件后缀名
+if [ $index == 0 ]                          #输入不带文件后缀名
 then
     filename=$filenamein
-    flexfilename="${filenamein}.lex"
-    suffix="lex"
+    flexfilename="${filenamein}.l"
+    suffix="l"
 
-else                #输入带文件后缀，判断后缀类型
+else                                        #输入带文件后缀，判断后缀类型
     filename=${filenamein:0:index-1}
     suffix=${filenamein:index:${#filenamein}}
-    if [ "$suffix"x = "lex"x ]
+    lexConvert="x"
+    if [ "$suffix"x = "lex"x ]              #输入文件后缀为.lex，自动转换成.l
     then
         flexfilename=$1
+        lexConvert="xx"
     
     elif [ "$suffix"x = "l"x ]
     then
@@ -49,6 +51,14 @@ if [ ! -f "$flexfilename" ]
 then
     echo "Error file name ${filenamein}!"
     exit
+fi
+
+if [ lexConvert = "xx" ]
+then
+    echo "Convert the file $flexfilename to ${filename}.l"
+    mv $flexfilename ${filename}.l
+    $flexfilename="${filename}.l"
+
 fi
 
 echo "Filename in: $filenamein"
