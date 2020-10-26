@@ -2,7 +2,7 @@
 
 #@author: zhzero
 
-if [ "$1"x=x  ]   	                    #没有输入文件名
+if [ "$1"x=x  ]   	                        #没有输入文件名
 then
     read -t 30 -p "Please input filename: " filenamein
 
