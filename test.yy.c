@@ -451,8 +451,8 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "test.lex"
-#line 2 "test.lex"
+#line 1 "test.l"
+#line 2 "test.l"
 int num_lines = 0 , num_chars = 0 , sb_times = 0;
 #line 458 "test.yy.c"
 
@@ -672,7 +672,7 @@ YY_DECL
 		}
 
 	{
-#line 7 "test.lex"
+#line 7 "test.l"
 
 #line 678 "test.yy.c"
 
@@ -734,22 +734,22 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 8 "test.lex"
+#line 8 "test.l"
 ++ num_lines; ++ num_chars;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 9 "test.lex"
+#line 9 "test.l"
 ++ num_chars;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 10 "test.lex"
+#line 10 "test.l"
 ++ sb_times;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 11 "test.lex"
+#line 11 "test.l"
 ECHO;
 	YY_BREAK
 #line 756 "test.yy.c"
@@ -1753,7 +1753,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 11 "test.lex"
+#line 11 "test.l"
 
 
 

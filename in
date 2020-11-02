@@ -1,17 +1,44 @@
-abcdefghigklmn
-if(123)
-{
-    ad54a5s421dasd1add456
-    s4e2a44
+%{
+    #include <math.h>
+    int lines = 0;
+%}
+
+%option noyywrap
+
+DIGHT [0-9]
+ID [a-z][a-z0-9]
+
+%%
+{DIGHT}+ {
+    printf("An integer: %s (%d)\n" , yytext , atoi(yytext));
 }
-then
-{
-    a5s4d5a4q8
-    sad5w5w4
+
+{DIGHT}+"."{DIGHT}* {
+    printf("A float: %s (%g)\n" , yytext , atof(yytext));
 }
-123
-456
-789
-321
-654
-897
+
+"if"|"then"|"{"|"}" {
+    printf("A key word: %s\n" , yytext);
+}
+
+"\n" {
+    lines += 1;
+}
+
+%%
+
+int main(int argc , char **argv)
+{
+    yyin = fopen("in" , "r");
+    /*if(argc > 0)
+    {
+        yyin = fopen(argv[0] , "r");
+    }
+    else
+    {
+        yyin = stdin;
+    }*/
+
+    yylex();
+    printf("%d lines\n" , lines);
+}

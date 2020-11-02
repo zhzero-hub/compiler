@@ -5,13 +5,16 @@
 	> Created Time: Sat 24 Oct 2020 08:20:28 AM CST
  ************************************************************************/
 
-#include<stdio.h>
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
 
 int main()
 {
     int a = 1;
     int b = 2;
     int c = 3;
-    printf("%d" , a);
+    cout << (((a))) << endl;
     return 0;
 }
