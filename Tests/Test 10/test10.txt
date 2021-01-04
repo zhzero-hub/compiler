@@ -1,0 +1,58 @@
+int div(int x)
+{
+     	int factor;
+	int i;
+     	factor = 10;
+	i=x/factor;
+     	return (i);
+}
+
+int rem(int x, int y)
+{
+   	int factor;
+	int i;
+   	factor =10;
+	i=y - (factor*x);
+  	return (i);
+}
+
+int digitize(int x)
+{
+	int dx;
+      	int rx;
+ 
+      	while (x > 0)
+     	{
+        		dx = div(x);
+	   	rx = rem(dx,x);
+          		output(rx);
+	   	x = dx;
+      	}
+	return 0;
+}
+
+
+int Fibonacci(int x)
+{
+	int val;
+
+	if (x == 1) val = 1;
+ 	if (x == 2) val = 1;
+	if (x > 2) 
+	{
+		val = Fibonacci(x-2)+Fibonacci(x-1);
+	}
+      	digitize(val);
+      	return val;
+}
+
+int main(void)
+{
+       	int x;
+       	int result;
+
+       	x = input();
+       	result = Fibonacci(x);
+       	output(result);
+	return 0;
+}

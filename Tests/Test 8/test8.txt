@@ -1,0 +1,36 @@
+int div(int x)
+{
+     	int factor;
+	int i;
+     	factor = 10;
+	i=x/factor;
+     	return (i);
+}
+
+int rem(int x, int y)
+{
+   	int factor;
+	int i;
+   	factor =10;
+	i=y - (factor*x)
+   	return (i);
+}
+
+int main(void)
+{
+
+	int x;
+	int dx;
+      	int rx;
+ 
+	x = input();
+
+      	while (x > 0)
+     	{
+         		dx = div(x);
+	   	rx = rem(dx,x);
+          		output(rx);
+	   	x = dx;
+      	}
+	return 0;
+}
